@@ -1,13 +1,12 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*" %>
 <%@ page import="br.com.fiap.granfinale.model.*" %>
-<jsp:include page="header.jsp" />
+<jsp:include page="header.jsp"/>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Saldos e Pagamentos</title>
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body class="bg-body-secondary px-0">
 <div class="container py-5">
@@ -33,7 +32,8 @@
                             List<DespesaDivisao> divs = entry.getValue();
                             double total = 0.0;
                     %>
-                    <h6 class="text-primary"><%= pagador.getNome() %></h6>
+                    <h6 class="text-primary"><%= pagador.getNome() %>
+                    </h6>
                     <ul class="list-unstyled">
                         <%
                             for (Despesa d : despesas) {
@@ -44,7 +44,9 @@
                         %>
                         <li>
                             <%= div.getParticipante().getNome() %> deve pagar<br>
-                            <small>Despesa: <%= d.getDescricao() %> | Data: <%= new java.text.SimpleDateFormat("dd/MM/yyyy").format(d.getData()) %></small>
+                            <small>Despesa: <%= d.getDescricao() %> |
+                                Data: <%= new java.text.SimpleDateFormat("dd/MM/yyyy").format(d.getData()) %>
+                            </small>
                             <span class="text-success float-end">R$ <%= String.format("%.2f", div.getValor()) %></span>
                         </li>
                         <%
@@ -54,7 +56,8 @@
                             }
                         %>
                     </ul>
-                    <div class="text-end fw-bold text-primary">Total: R$ <%= String.format("%.2f", total) %></div>
+                    <div class="text-end fw-bold text-primary">Total: R$ <%= String.format("%.2f", total) %>
+                    </div>
                     <hr/>
                     <%
                         }
@@ -93,11 +96,16 @@
                     for (DespesaDivisao div : d.getDivisoes()) {
             %>
             <tr>
-                <td><%= d.getDescricao() %></td>
-                <td><%= d.getGrupo().getNome() %></td>
-                <td>R$ <%= String.format("%.2f", div.getValor()) %></td>
-                <td><%= div.getParticipante().getNome() %></td>
-                <td><%= new java.text.SimpleDateFormat("dd/MM/yyyy").format(d.getData()) %></td>
+                <td><%= d.getDescricao() %>
+                </td>
+                <td><%= d.getGrupo().getNome() %>
+                </td>
+                <td>R$ <%= String.format("%.2f", div.getValor()) %>
+                </td>
+                <td><%= div.getParticipante().getNome() %>
+                </td>
+                <td><%= new java.text.SimpleDateFormat("dd/MM/yyyy").format(d.getData()) %>
+                </td>
                 <td>
               <span class="badge
                 <%= "PAGO".equals(div.getStatus()) ? "bg-success" :

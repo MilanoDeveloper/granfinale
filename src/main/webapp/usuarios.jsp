@@ -1,8 +1,7 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="br.com.fiap.granfinale.model.User" %>
 <%@ page import="java.util.List" %>
-<jsp:include page="header.jsp" />
+<jsp:include page="header.jsp"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,11 +27,14 @@
     <div class="col-md-4 mb-4">
         <div class="card shadow-sm">
             <div class="card-body text-center">
-                <div class="rounded-circle bg-primary text-white d-inline-block mb-3" style="width:60px; height:60px; line-height:60px; font-size:20px;">
+                <div class="rounded-circle bg-primary text-white d-inline-block mb-3"
+                     style="width:60px; height:60px; line-height:60px; font-size:20px;">
                     <%= iniciais.toUpperCase() %>
                 </div>
-                <h5><%= user.getNome() %></h5>
-                <p class="text-muted"><%= user.getEmail() %></p>
+                <h5><%= user.getNome() %>
+                </h5>
+                <p class="text-muted"><%= user.getEmail() %>
+                </p>
                 <a href="#" class="text-primary me-2"><i class="bi bi-pencil"></i></a>
                 <a href="#" class="text-danger"><i class="bi bi-trash"></i></a>
             </div>
@@ -58,7 +60,7 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="nome"  id="nome" class="form-label">Nome</label>
+                    <label for="nome" id="nome" class="form-label">Nome</label>
                     <input type="text" class="form-control" name="nome" required>
                 </div>
                 <div class="mb-3">

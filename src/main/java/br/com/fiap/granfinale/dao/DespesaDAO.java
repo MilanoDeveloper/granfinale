@@ -117,7 +117,6 @@ public class DespesaDAO {
     }
 
 
-
     public void atualizarStatus(int despesaId, int participanteId, String status) {
         String sql = "UPDATE despesa_participante SET status = ? WHERE despesa_id = ? AND participante_id = ?";
         try (Connection conn = ConnectionManager.getConnection();
@@ -154,8 +153,6 @@ public class DespesaDAO {
 
         return divs;
     }
-
-
 
     public void atualizarValor(int despesaId, int participanteId, double valor) {
         String sql = "UPDATE despesa_participante SET valor = ? WHERE despesa_id = ? AND participante_id = ?";
