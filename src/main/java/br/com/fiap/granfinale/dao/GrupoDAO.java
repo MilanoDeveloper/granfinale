@@ -11,6 +11,9 @@ import java.util.List;
 
 public class GrupoDAO {
 
+    public GrupoDAO(Connection connection) {
+    }
+
     public boolean cadastrar(Grupo grupo) {
         String sqlGrupo = "INSERT INTO grupos (nome) VALUES (?)";
         String sqlAssoc = "INSERT INTO grupo_participante (grupo_id, participante_id) VALUES (?, ?)";

@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard - SplitWise</title>
+    <title>Dashboard - PayShare</title>
     <link href="resources/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body class="bg-body-secondary px-0">
 
 <div class="container py-5 text-center">
-    <h1 class="text-primary fw-bold">Bem-vindo ao SplitWise</h1>
+    <h1 class="text-primary fw-bold">Bem-vindo ao PayShare</h1>
     <p class="text-muted">A maneira mais fácil de dividir despesas com amigos e família</p>
 
     <div class="row justify-content-center mt-4">

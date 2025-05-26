@@ -9,7 +9,7 @@
 
 <div class="card shadow-sm p-4" style="width: 100%; max-width: 400px;">
     <div class="text-center mb-4">
-        <img src="resources/img/logo.png" alt="SplitWise" style="max-height: 250px;">
+        <img src="resources/img/logoPayShare.png" alt="PayShare" style="max-height: 250px;">
     </div>
 
     <% if (request.getAttribute("erro") != null) { %>

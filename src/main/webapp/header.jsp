@@ -7,7 +7,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-0">
     <div class="container-fluid px-3">
-        <a class="navbar-brand" href="dashboard.jsp">SplitWise</a>
+        <a class="navbar-brand" href="dashboard.jsp">PayShare</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="participantes">Usuários</a></li>

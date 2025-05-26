@@ -60,11 +60,8 @@
     </div>
 
     <%
-        br.com.fiap.granfinale.dao.GrupoDAO grupoDAO = new br.com.fiap.granfinale.dao.GrupoDAO();
-        List<Grupo> grupos = grupoDAO.listarTodos();
-
-        br.com.fiap.granfinale.dao.ParticipanteDAO participanteDAO = new br.com.fiap.granfinale.dao.ParticipanteDAO();
-        List<Participante> participantes = participanteDAO.listarTodos();
+        List<br.com.fiap.granfinale.model.Grupo> grupos = (List<br.com.fiap.granfinale.model.Grupo>) request.getAttribute("grupos");
+        List<br.com.fiap.granfinale.model.Participante> participantes = (List<br.com.fiap.granfinale.model.Participante>) request.getAttribute("participantes");
     %>
     <div class="modal fade" id="novaDespesaModal" tabindex="-1" aria-labelledby="novaDespesaModalLabel"
          aria-hidden="true">

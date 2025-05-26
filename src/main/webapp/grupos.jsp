@@ -15,9 +15,8 @@
 <div class="container py-5">
 
     <%
-        br.com.fiap.granfinale.dao.ParticipanteDAO participanteDAO = new br.com.fiap.granfinale.dao.ParticipanteDAO();
-        List<br.com.fiap.granfinale.model.Participante> participantes = participanteDAO.listarTodos();
-        List<Grupo> grupos = (List<Grupo>) request.getAttribute("grupos");
+        List<br.com.fiap.granfinale.model.Grupo> grupos = (List<br.com.fiap.granfinale.model.Grupo>) request.getAttribute("grupos");
+        List<br.com.fiap.granfinale.model.Participante> participantes = (List<br.com.fiap.granfinale.model.Participante>) request.getAttribute("participantes");
     %>
 
     <div class="d-flex justify-content-between align-items-center mb-4">

@@ -11,6 +11,9 @@ import java.util.List;
 public class ParticipanteDAO {
 
 
+    public ParticipanteDAO(Connection connection) {
+    }
+
     public boolean atualizar(Participante participante) {
         String sql = "UPDATE participantes SET nome = ?, email = ? WHERE id = ?";
         try (Connection conn = ConnectionManager.getConnection();

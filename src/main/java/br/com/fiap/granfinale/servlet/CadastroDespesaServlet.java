@@ -1,25 +1,28 @@
-
 package br.com.fiap.granfinale.servlet;
 
 import br.com.fiap.granfinale.dao.DespesaDAO;
+import br.com.fiap.granfinale.factory.DAOFactory;
 import br.com.fiap.granfinale.model.*;
 
+import br.com.fiap.granfinale.util.ConnectionManager;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 @WebServlet("/cadastrar-despesa")
 public class CadastroDespesaServlet extends HttpServlet {
 
-    private DespesaDAO dao = new DespesaDAO();
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
+        try (Connection conn = ConnectionManager.getConnection()) {
+            DAOFactory factory = new DAOFactory(conn);
+            DespesaDAO dao = factory.getDespesaDAO();
+
             String descricao = req.getParameter("descricao");
             double valor = Double.parseDouble(req.getParameter("valor"));
             Date data = new SimpleDateFormat("yyyy-MM-dd").parse(req.getParameter("data"));

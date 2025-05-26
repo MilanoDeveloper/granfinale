@@ -10,6 +10,9 @@ import java.util.List;
 
 public class DespesaDAO {
 
+    public DespesaDAO(Connection connection) {
+    }
+
     public boolean cadastrar(Despesa despesa) {
         String sqlDespesa = "INSERT INTO despesas (descricao, valor, data, grupo_id, pagador_id) VALUES (?, ?, ?, ?, ?)";
         String sqlDivisao = "INSERT INTO despesa_participante (despesa_id, participante_id, valor) VALUES (?, ?, ?)";

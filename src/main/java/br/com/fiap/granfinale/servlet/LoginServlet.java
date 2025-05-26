@@ -1,10 +1,12 @@
-package br.com.fiap.granfinale.servlet;
 
+package br.com.fiap.granfinale.servlet;
 
 import br.com.fiap.granfinale.dao.UserDAO;
 import br.com.fiap.granfinale.exception.UsuarioNaoEncontradoException;
+import br.com.fiap.granfinale.factory.DAOFactory;
 import br.com.fiap.granfinale.model.User;
 import br.com.fiap.granfinale.util.ConnectionManager;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,6 +18,7 @@ import java.sql.Connection;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -23,16 +26,19 @@ public class LoginServlet extends HttpServlet {
         String senha = request.getParameter("senha");
 
         try (Connection conn = ConnectionManager.getConnection()) {
-            UserDAO dao = new UserDAO(conn);
+            DAOFactory factory = new DAOFactory(conn);
+            UserDAO dao = factory.getUserDAO();
+
             User usuario = dao.autenticar(email, senha);
 
             if (usuario != null) {
                 request.getSession().setAttribute("usuario", usuario);
                 response.sendRedirect("dashboard.jsp");
             } else {
-                request.setAttribute("erro", "Usuário ou senha inválidos");
+                request.setAttribute("erro", "Usuário ou senha inválidos.");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
+
         } catch (UsuarioNaoEncontradoException e) {
             throw new ServletException(e);
         } catch (Exception e) {
@@ -40,4 +46,3 @@ public class LoginServlet extends HttpServlet {
         }
     }
 }
-
