@@ -115,7 +115,7 @@ public class UserDAO {
                 user.setId(rs.getInt("id"));
                 user.setNome(rs.getString("nome"));
                 user.setEmail(rs.getString("email"));
-                user.setSenha(rs.getString("senha")); // evite exibir isso na view
+                user.setSenha(rs.getString("senha"));
                 usuarios.add(user);
             }
 

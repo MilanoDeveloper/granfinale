@@ -59,7 +59,6 @@
         %>
     </div>
 
-    <!-- Modal Nova Despesa -->
     <%
         br.com.fiap.granfinale.dao.GrupoDAO grupoDAO = new br.com.fiap.granfinale.dao.GrupoDAO();
         List<Grupo> grupos = grupoDAO.listarTodos();

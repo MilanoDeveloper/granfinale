@@ -126,7 +126,6 @@
                         <input type="hidden" name="status" value="CANCELADO">
                         <button class="btn btn-danger btn-sm">&#10060;</button>
                     </form>
-                    <!-- Botão de edição -->
                     <form action="editar-divisao.jsp" method="get" class="d-inline">
                         <input type="hidden" name="despesaId" value="<%= d.getId() %>">
                         <input type="hidden" name="participanteId" value="<%= div.getParticipante().getId() %>">

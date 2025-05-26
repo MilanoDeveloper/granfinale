@@ -50,7 +50,6 @@
     %>
 </div>
 
-<!-- Modal Novo Usuário -->
 <div class="modal fade" id="novoUsuarioModal" tabindex="-1" aria-labelledby="novoUsuarioModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <form class="modal-content" action="cadastrar-usuario" method="post">
